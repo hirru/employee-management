@@ -81,8 +81,10 @@ class AuthController {
   //Method for validating a user
   async matchToken(req, res) {
     const token = req.header("Authorization");
+    console.log("match token", token, process.env.PRIVATE_KEY);
     try {
       let { user } = jwt.verify(token, process.env.PRIVATE_KEY);
+      console.log("match token user", user);
       if (user) {
         const data = await Helper.checkUserExists(user.email);
         delete data._doc.password;
@@ -109,6 +111,8 @@ class AuthController {
         }
       }
     } catch (err) {
+      console.log("match token catch", err);
+
       return ResponseFormatter.error(
         res,
         {

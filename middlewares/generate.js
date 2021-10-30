@@ -1,8 +1,8 @@
 // import jwt from "jsonwebtoken";
 const jwt = require("jsonwebtoken");
-const key = "123456789kjhgf";
+
 const genToken = (user) => {
-  const token = jwt.sign({ user }, key, {
+  const token = jwt.sign({ user }, process.env.PRIVATE_KEY, {
     expiresIn: "48hr",
   });
   return (user.token = token);
