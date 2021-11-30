@@ -1,13 +1,13 @@
 //Module Import
 const bcrypt = require("bcryptjs");
-const UserModel = require("../models/User");
+const ManagerModel = require("../models/Manager");
 
 class Helper {
   // Method to check if user exist or not
   async checkUserExists(email) {
     return new Promise(async (resolve, reject) => {
       try {
-        const user = await UserModel.findOne({ email });
+        const user = await ManagerModel.findOne({ email });
         resolve(user);
       } catch (err) {
         reject(err);

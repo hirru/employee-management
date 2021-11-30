@@ -3,10 +3,13 @@ POST http://localhost:5000/api/auth/signUp
 Content-Type: application/json
 
 {
-    "firstName":"jhon",
-     "lastName":"bill", 
-     "email":"jhon111@gmail.com", 
-     "password":"123456"
+     "firstName":"ftest",
+      "lastName":"ltest",
+      "email":"test@gmail.com",
+      "password":"123456",
+      "address":"abc",
+      "dob":"12/3/1995",
+      "company":"xyz"
 }
 
 ###lOGIN
@@ -14,7 +17,51 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-     "email":"jhon111@gmail.com", 
+     "email":"emp1@gmail.com", 
      "password":"123456"
+    
+}
+
+###add employee
+POST http://localhost:5000/api/auth/addEmployee
+Content-Type: application/json
+
+{
+     "firstName": "empfirst",
+     "lastName": "emplast",
+     "email":"emp2@gmail.com",
+     "address":"abc",
+     "dob": "12/3/1995",
+     "mobile": "807758987",
+     "city":"abc"
+    
+}
+
+###get employees
+GET http://localhost:5000/api/auth/getAllEmployees
+Content-Type: application/json
+
+###update employee
+PUT http://localhost:5000/api/auth/updateEmployee
+Content-Type: application/json
+
+{
+     "firstName": "firstupdated",
+     "lastName": "lastupdated",
+     "email":"emp2@gmail.com",
+     "address":"abc",
+     "dob": "12/3/1995",
+     "mobile": "807700000",
+     "city":"abc"
+    
+    
+}
+
+###delete employee
+DELETE  http://localhost:5000/api/auth/deleteEmployee
+Content-Type: application/json
+
+{
+    "email":"d@gmail.com"
     
 }
